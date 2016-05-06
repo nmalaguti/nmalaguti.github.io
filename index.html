@@ -1,101 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>2048</title>
-
-  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
   <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>nmalaguti.github.io</title>
+
+  <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/yeti/bootstrap.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="style/main.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-  <div class="container">
-    <div class="heading">
-      <h1 class="title">2048</h1>
-      <div class="scores-container">
-        <div class="score-container">0</div>
-        <div class="best-container">0</div>
+
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">nmalaguti.github.io</a>
       </div>
+      <div class="navbar-collapse collapse">
+        <div class="navbar-right">
+          <p class="navbar-text">Find Me:</p>
+          <ul class="nav navbar-nav">
+            <li><a href="http://github.com/nmalaguti/" alt="GitHub"><i class="fa fa-github fa-fw fa-lg"></i> GitHub</a></li>
+            <li><a href="http://www.linkedin.com/in/nmalaguti"><i class="fa fa-linkedin-square fa-fw fa-lg"></i> LinkedIn</a></li>
+            <li><a href="http://www.facebook.com/nmalaguti"><i class="fa fa-facebook fa-fw fa-lg"></i> Facebook</a></li>
+          </ul>
+        </div>
+      </div><!--/.navbar-collapse -->
     </div>
-
-    <div class="above-game">
-      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
-      <a class="restart-button">New Game</a>
-    </div>
-
-    <div class="game-container">
-      <div class="game-message">
-        <p></p>
-        <div class="lower">
-	        <a class="keep-playing-button">Keep going</a>
-          <a class="retry-button">Try again</a>
-        </div>
-      </div>
-
-      <div class="grid-container">
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-      </div>
-
-      <div class="tile-container">
-
-      </div>
-    </div>
-
-    <p class="game-explanation">
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
-    </p>
-    <hr>
-    <p>
-    <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone via <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
-    </p>
-    <hr>
-    <p>
-    Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
-    </p>
   </div>
 
-  <script src="js/bind_polyfill.js"></script>
-  <script src="js/classlist_polyfill.js"></script>
-  <script src="js/animframe_polyfill.js"></script>
-  <script src="js/keyboard_input_manager.js"></script>
-  <script src="js/ai_input_manager.js"></script>
-  <script src="js/html_actuator.js"></script>
-  <script src="js/ai_actuator.js"></script>
-  <script src="js/grid.js"></script>
-  <script src="js/tile.js"></script>
-  <script src="js/local_storage_manager.js"></script>
-  <script src="js/game_manager.js"></script>
-  <script src="js/application.js"></script>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Hello, world!</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Professional</h2>
+
+        <div class="panel-group" id="accordionProfessional">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionProfessional" href="#collapseLang">
+                  Languages &amp; Frameworks
+                </a>
+              </h4>
+            </div>
+            <div id="collapseLang" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <h5>Active</h5>
+                <ul>
+                  <li>JavaScript and Node.js</li>
+                  <li>TypeScript</li>
+                  <li>Python</li>
+                  <li>Java</li>
+                </ul>
+                <h5>Previous</h5>
+                <ul>
+                  <li>C# and .NET</li>
+                  <li>Win32 and COM</li>
+                  <li>C and C++</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionProfessional" href="#collapseOS">
+                  OS &amp; Mobile
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOS" class="panel-collapse collapse">
+              <div class="panel-body">
+                <ul>
+                  <li>Mac OS X</li>
+                  <li>Linux</li>
+                  <li>Windows</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionProfessional" href="#collapseTools">
+                  Tools &amp; Libraries
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTools" class="panel-collapse collapse">
+              <div class="panel-body">
+                <ul>
+                  <li>Git</li>
+                  <li>Gulp</li>
+                  <li>Grunt</li>
+                  <li>Gradle</li>
+                  <li>Mocha</li>
+                  <li>Chai</li>
+                  <li>Eclipse</li>
+                  <li>IntelliJ IDEA</li>
+                  <li>VIM</li>
+                  <li>Sublime Text</li>
+                  <li>Visual Studio</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Personal</h2>
+
+        <div class="panel-group" id="accordionPersonal">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionPersonal" href="#collapsePersonal">
+                  Personal projects
+                </a>
+              </h4>
+            </div>
+            <div id="collapsePersonal" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <ul>
+                  <li><a href="http://nmalaguti.github.io/2048/">2048 AI</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionPersonal" href="#collapseShiba">
+                 Shiba Inu
+                </a>
+              </h4>
+            </div>
+            <div id="collapseShiba" class="panel-collapse collapse">
+              <div class="panel-body">
+                <img src="images/lily-couch.jpg" class="img-responsive">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <hr>
+    <div class="container text-center text-muted">
+      <p><small>&copy; 2014 <a href="http://nmalaguti.com/">Nick Malaguti</a> -
+      Built with <a href="http://getbootstrap.com/">Bootstrap</a>,
+      <a href="http://bootswatch.com/yeti/">Bootswatch Yeti</a>, and
+      <a href="http://fontawesome.io">Font Awesome</a>.</small></p>
+    </div>
+  </footer>
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>
